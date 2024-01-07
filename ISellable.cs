@@ -8,11 +8,11 @@ namespace ParProgrammering_5
 {
     internal interface ISellable
     {
-        public string Navn { get; set; }
+        public string Navn { get; }
 
-        public int Antall { get; set; }
+        public int Antall { get; }
 
-        public double Pris { get; set; }
+        public double Pris { get; }
         public double PrisKalkulasjon();
 
         public void PrintItems()

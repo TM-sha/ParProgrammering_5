@@ -9,9 +9,9 @@ namespace ParProgrammering_5
 {
     internal class ClothingItem : InventoryItem, ISellable
     {
-        public string Størrelse { get; set; }
+        public string Størrelse { get; }
 
-        public string Farge { get; set; }
+        public string Farge { get; }
 
         public ClothingItem(string størrelse, string farge, string navn, int antall, double pris) : base(navn, antall, pris)
         {
@@ -19,12 +19,9 @@ namespace ParProgrammering_5
             Farge = farge;
         }
 
-        public double PrisKalkulasjon()
+        public override double PrisKalkulasjon()
         {
-            var antall = Antall;
-            var pris = Pris;
-            var totalPris = antall * pris;
-            Console.WriteLine($"TotalPris: {totalPris:C},-");
+            base.PrisKalkulasjon();
             return Antall * Pris;
         }
 

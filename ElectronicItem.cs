@@ -9,21 +9,18 @@ namespace ParProgrammering_5
 {
     internal class ElectronicItem : InventoryItem, ISellable
     {
-        public string Forsikring { get; set; }
+        public string Forsikring { get; }
 
-        public string Spenning { get; set; }
+        public string Spenning { get; }
 
         public ElectronicItem(string navn, int antall, double pris, string forsikring, string spenning) : base(navn, antall, pris)
         {
             Forsikring = forsikring;
             Spenning = spenning;
         }
-        public double PrisKalkulasjon()
+        public override double PrisKalkulasjon()
         {
-            var antall = Antall;
-            var pris = Pris;
-            var totalPris = antall * pris;
-            Console.WriteLine($"TotalPris: {totalPris:C},-");
+            base.PrisKalkulasjon();
             return Antall * Pris;
         }
 
